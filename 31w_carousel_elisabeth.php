@@ -15,16 +15,16 @@ Author URI: https://github.com/elisabeththeoret/31w_carousel_elisabeth
 Version: 1.0.0
 */
 
-function genere_html(){
+function boite_carousel(){
 	/////////////////////////////////////// HTML
-	// Le conteneur d'une boîte
+	// Le conteneur d'une boîte de carousel
 	$contenu = 
-	"<div class='boite'>"
-	. "<code>Auteur: " . get_the_author() . "</code>"
-	. "<date>Date de publication: " . get_the_date() . "</date>"
-	. "<code>Adresse URL: " . get_the_guid() . "</code>"
-	. '</div> <!-- fin class="boite" -->';
+	  '<div class="carousel">'
+	.	'<button class="carousel__bouton--fermer">X</button>'
+	.	'<figure class="carousel__figure"></figure>'
+	.	'<form class="carousel__form"></form>'
+	. '</div> <!-- fin class="carousel" -->';
 
 	return $contenu;
 }
-add_shortcode('31w_carousel_elisabeth', 'genere_html');
+add_shortcode( '31w_carousel_elisabeth', 'boite_carousel' );
