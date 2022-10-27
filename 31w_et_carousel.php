@@ -15,7 +15,11 @@ Author URI: https://github.com/elisabeththeoret/31w_et_carousel
 Version: 1.0.0
 */
 
+/**
+ * Fonction qui intègre les liens (link:css et script) dans la page
+ */
 function et_enqueue() {
+	// Intégrer le fichier CSS
 	$version_css = filemtime( plugin_dir_path( __FILE__ ) . "style.css" );
 	wp_enqueue_style(
 		'31w_et_carousel',
@@ -25,6 +29,7 @@ function et_enqueue() {
 		false
 	);
 
+	// Intégrer le script JS
 	$version_js = filemtime( plugin_dir_path( __FILE__ ) . "js/carousel.js" );
 	wp_enqueue_script(
 		'31w_et_carousel',
@@ -36,6 +41,9 @@ function et_enqueue() {
 }
 add_action( 'wp_enqueue_scripts', 'et_enqueue' );
 
+/**
+ * Fonction qui intègre le contenu du carousel dans la page
+ */
 function boite_carousel() {
 	/////////////////////////////////////// HTML
 	// Le conteneur d'une boîte de carousel
