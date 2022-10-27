@@ -18,8 +18,8 @@ Version: 1.0.0
 
 /**
  * Fonction qui intègre les liens (link:css et script) dans la page
- * @param version_css [string] // Trouve la dernière version du fichier css
- * @param version_js [string] // Trouve la dernière version du fichier js
+ * @param {string} $version_css // Trouve la dernière version du fichier css
+ * @param {string} $version_js // Trouve la dernière version du fichier js
  */
 function et_enqueue() {
 	// Intégrer le fichier CSS
@@ -46,6 +46,8 @@ add_action( 'wp_enqueue_scripts', 'et_enqueue' );
 
 /**
  * Fonction qui intègre le contenu du carrousel dans la page
+ * @param {string} $content // Contenu du carrousel en chaine HTML
+ * @return {string}
  */
 function boite_carrousel() {
 	/////////////////////////////////////// HTML
