@@ -15,19 +15,28 @@ Author URI: https://github.com/elisabeththeoret/31w_et_carousel
 Version: 1.0.0
 */
 
+function et_enqueue() {
+	$version_css = filemtime( plugin_dir_path( __FILE__ ) . "style.css" );
+	wp_enqueue_style(
+		'31w_et_carousel',
+		plugin_dir_url( __FILE__ ) . "style.css",
+		array(),
+		$version_css,
+		false
+	);
 
-// filemtime(); // retourne en milliseconde le temps de la dernière sauvegarde
-// plugin_dir_path(); // retourne le chemin du répertoire du plugin
-// __FILE__; // le fichier en train de s'exécuter
-// wp_enqueue_style(); // Intègre le link:css dans la page
-// wp_enqueue_script(); // intègre le script dans la page
-// wp_enqueue_scripts(); // le hook
+	$version_js = filemtime( plugin_dir_path( __FILE__ ) . "js/carousel.js" );
+	wp_enqueue_script(
+		'31w_et_carousel',
+		plugin_dir_url( __FILE__ ) . "js/carousel.js",
+		array(),
+		$version_js,
+		false
+	);
+}
+add_action( 'wp_enqueue_scripts', 'et_enqueue' );
 
-function et_enqueue(){}
-$version_css = '';
-$version_js = '';
-
-function boite_carousel(){
+function boite_carousel() {
 	/////////////////////////////////////// HTML
 	// Le conteneur d'une boîte de carousel
 	$contenu = 
