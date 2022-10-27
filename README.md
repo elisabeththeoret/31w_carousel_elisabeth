@@ -1,7 +1,7 @@
 
 # TP01
 
-## Extension : 31w Carousel
+## Extension : 31w Carrousel
 
 Création d'une extension et mise en ligne du site wp
 
