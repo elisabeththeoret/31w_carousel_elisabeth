@@ -15,7 +15,6 @@ Author URI: https://github.com/elisabeththeoret/31w_et_carrousel
 Version: 1.0.0
 */
 
-
 /**
  * Fonction qui intègre les liens (link:css et script) dans la page
  * @param {string} $version_css // Trouve la dernière version du fichier css
