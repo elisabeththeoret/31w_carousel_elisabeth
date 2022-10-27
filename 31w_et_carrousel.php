@@ -51,7 +51,7 @@ function boite_carrousel() {
 	// Le conteneur d'une boîte de carrousel
 	$contenu = '
 		<button class="carrousel__bouton--ouvrir">Ouvrir le carrousel</button>
-		<div class="carrousel">
+		<div class="carrousel carrousel--fermer">
 			<button class="carrousel__bouton--fermer">X</button>
 			<figure class="carrousel__figure"></figure>
 			<form class="carrousel__form"></form>
