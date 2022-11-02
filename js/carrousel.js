@@ -5,26 +5,57 @@ function Initialisation() {
 	console.log( "carrousel" );
 
 	const carrousel = document.querySelector( ".carrousel" );
-	const boutonOuvrir = document.querySelector( ".carrousel__bouton--ouvrir" );
-	const boutonFermer = document.querySelector( ".carrousel__bouton--fermer" );
+	const cFigure = document.querySelector( ".carrousel__figure" );
+	const cBoutonOuvrir = document.querySelector( ".carrousel__bouton--ouvrir" );
+	const cBoutonFermer = document.querySelector( ".carrousel__bouton--fermer" );
+
+	const galerie = document.querySelector( ".galerie" );
+	const galerieImages = document.querySelectorAll( ".galerie img" );
+
+	let index = 0;
 
 	/**
-	 * Écouteur d'événement au click du bouton ouvrir
+	 * Ouvrir le carrousel
 	 */
-	boutonOuvrir.addEventListener( "click", function() {
+	cBoutonOuvrir.addEventListener( "click", function() {
 		console.log( "ouvrir carrousel" );
+
+		ajouterImages();
+
 		carrousel.classList.remove( "carrousel--fermer" );
 		carrousel.classList.add( "carrousel--ouvrir" );
 	} );
 
 	/**
-	 * Écouteur d'événement au click du bouton fermer
+	 * Fermer le carrousel
 	 */
-	boutonFermer.addEventListener( "click", function() {
+	cBoutonFermer.addEventListener( "click", function() {
 		console.log( "fermer carrousel" );
+
 		carrousel.classList.remove( "carrousel--ouvrir" );
 		carrousel.classList.add( "carrousel--fermer" );
 	} );
+
+	/**
+	 * Fonction qui ajoute les images de la galerie dans le carrousel
+	 */
+	function ajouterImages() {
+		let i = 0;
+
+		for ( const uneImage of galerieImages ) {
+			i++;
+
+			let cImage = document.createElement( "img" );
+			cImage.setAttribute( "src", uneImage.getAttribute( "src" ) );
+			cImage.classList.add( "carrousel__figure__img" );
+			cImage.dataset.index = i;
+
+			cFigure.appendChild( cImage );
+		}
+
+		carrousel.appendChild( cFigure );
+	}
+
 }
 
 /**
