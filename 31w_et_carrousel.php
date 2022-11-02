@@ -48,7 +48,7 @@ add_action( 'wp_enqueue_scripts', 'et_enqueue' );
  * @param {string} $content // Contenu du carrousel en chaine HTML
  * @return {string}
  */
-function boite_carrousel() {
+function et_boite_carrousel() {
 	/////////////////////////////////////// HTML
 	// Le conteneur d'une boîte de carrousel
 	$contenu = '
@@ -62,4 +62,4 @@ function boite_carrousel() {
 
 	return $contenu;
 }
-add_shortcode( '31w_et_carrousel', 'boite_carrousel' );
+add_shortcode( '31w_et_carrousel', 'et_boite_carrousel' );
