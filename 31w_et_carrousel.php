@@ -56,6 +56,10 @@ function et_boite_carrousel() {
 		<div class="carrousel carrousel--fermer">
 			<button class="carrousel__bouton--fermer">X</button>
 			<figure class="carrousel__figure"></figure>
+			<nav class="carrousel__nav">
+				<button class="carrousel__bouton--precedent" data-precedent><</button>
+				<button class="carrousel__bouton--suivant" data-suivant>></button>
+			</nav>
 			<form class="carrousel__form"></form>
 		</div><!-- /.carrousel -->
 	';

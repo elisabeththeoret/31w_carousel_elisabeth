@@ -1,5 +1,5 @@
 .carrousel {
-	position: absolute;
+	position: fixed;
 	top: 25vw;
 	left: 25vh;
 	width: 50vw;
@@ -18,4 +18,53 @@
 	transition: transform .2s, opacity .2s;
 	transform: scale(0);
 	opacity: 0;
+}
+
+.carrousel__bouton--ouvrir {}
+
+.carrousel__bouton--fermer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: inherit;
+}
+
+.carrousel__figure {
+	position: absolute;
+	width: inherit;
+	height: inherit;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+.carrousel__figure__img {
+	display: none;
+	max-height: 100%;
+	object-fit: cover;
+}
+
+.carrousel__figure__img--active {
+	display: block;
+}
+
+.carrousel__nav * {
+	position: absolute;
+	bottom: 0;
+	z-index: 1;
+}
+
+.carrousel__bouton--precedent {
+	left: 0;
+	background-color: turquoise;
+}
+
+.carrousel__bouton--suivant {
+	right: 0;
+	background-color: turquoise;
+}
+
+.carrousel__bouton--precedent:active,
+.carrousel__bouton--suivant:active {
+	background-color: red;
 }
