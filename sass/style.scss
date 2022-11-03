@@ -27,6 +27,7 @@
 	top: 0;
 	right: 0;
 	z-index: inherit;
+	background-color: turquoise;
 }
 
 .carrousel__figure {
@@ -64,6 +65,7 @@
 	background-color: turquoise;
 }
 
+.carrousel__bouton--fermer:active,
 .carrousel__bouton--precedent:active,
 .carrousel__bouton--suivant:active {
 	background-color: red;
