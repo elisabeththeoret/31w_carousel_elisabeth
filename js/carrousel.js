@@ -23,14 +23,28 @@
 	/**
 	 * Ouvrir le carrousel
 	 */
-	cBoutonOuvrir.addEventListener( "click", function() {
-		afficherCarrousel();
-	} );
+	cBoutonOuvrir.addEventListener( "click", initialisationCarrousel.bind( this ) );
+	galerie.addEventListener( "click", initialisationCarrousel.bind( this ) );
 
 	/**
 	 * Changer d'image active
 	 */
 	cNav.addEventListener( "click", changerImageActive.bind( this ) );
+
+
+	/**
+	 * Fonction qui initialise le carrousel
+	 * @param { HTML Element } e // Élément cible du DOM
+	 */
+	 function initialisationCarrousel( e ) {
+		afficherCarrousel();
+
+		index = Number( e.target.dataset.index );
+		console.log( index );
+		cForm.children[ index ].querySelector( ".carrousel__form__radio" ).checked = true;
+
+		changerImageActive( e );
+	}
 
 	/**
 	 * Créer et afficher le carrousel
