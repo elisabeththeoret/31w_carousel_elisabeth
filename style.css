@@ -1,44 +1,170 @@
+@charset "UTF-8";
+/* Carrousel ----------------------- */
 .carrousel {
   position: fixed;
-  top: 25vw;
-  left: 25vh;
-  width: 50vw;
-  height: 50vw;
-  z-index: 2;
-  background-color: grey;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  min-width: 75vw;
+  height: 80%;
+  z-index: 1;
+  background-color: black;
 }
 
 .carrousel--ouvrir {
   transition: transform 0.5s, opacity 0.5s;
-  transform: scale(1);
+  transform: translate(-50%, -50%);
   opacity: 1;
 }
 
 .carrousel--fermer {
   transition: transform 0.2s, opacity 0.2s;
-  transform: scale(0);
+  transform: translate(-50%, -40%);
   opacity: 0;
+  pointer-events: none;
 }
 
+/* Nav ----------------------- */
+.carrousel__nav {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.carrousel__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 10px;
+  background-color: inherit;
+  border-top: 1px solid seagreen;
+}
+
+.carrousel__nav * {
+  transition: 200ms ease-in-out;
+}
+
+/* Bouton Fermer ----------------------- */
 .carrousel__bouton--fermer {
-  position: absolute;
-  top: 0;
-  right: 0;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 19px;
+  font-weight: bolder;
+  color: lightsalmon;
+  background-color: white;
+  border: none;
+  border-radius: 100%;
+  transition: 200ms ease-in-out;
   z-index: 1;
-  background-color: turquoise;
 }
 
-.carrousel__figure {
+.carrousel__bouton--fermer:hover {
+  color: white;
+  background-color: lightsalmon;
+}
+
+/* Boutons Nav ----------------------- */
+.carrousel__bouton--precedent,
+.carrousel__bouton--suivant {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  color: seagreen;
+  background-color: white;
+  border: none;
+  border-radius: 100%;
+}
+
+.carrousel__bouton--precedent:hover,
+.carrousel__bouton--suivant:hover {
+  color: white;
+  background-color: seagreen;
+}
+
+.carrousel__bouton--fermer:active,
+.carrousel__bouton--precedent:active,
+.carrousel__bouton--suivant:active {
+  background-color: initial;
+}
+
+/* Form Nav ----------------------- */
+.carrousel__form {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+}
+
+/* Boutons Radios From ----------------------- */
+.carrousel__radio {
+  display: block;
+  position: relative;
+  width: fit-content;
+  height: 20px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Cacher le bouton radio par défaut */
+.carrousel__radio .carrousel__form__radio {
   position: absolute;
-  width: inherit;
-  height: inherit;
+  height: 16px;
+  width: 16px;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Nouveau bouton radio */
+.carrousel__radio__custom {
+  position: absolute;
   top: 0;
   left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.carrousel__radio:hover .carrousel__form__radio ~ .carrousel__radio__custom {
+  background-color: lightsalmon;
+  border-radius: 0;
+}
+
+/* When the radio button is checked, add a blue background */
+.carrousel__radio .carrousel__form__radio:checked ~ .carrousel__radio__custom {
+  background-color: seagreen;
+  border-radius: 100%;
+}
+
+/* Figure ----------------------- */
+.carrousel__figure {
+  position: relative;
+  width: 100%;
+  height: auto;
   overflow: hidden;
 }
 
+/* Image Figure ----------------------- */
 .carrousel__figure__img {
   display: block;
+  position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -47,40 +173,7 @@
 }
 
 .carrousel__figure__img--active {
+  position: fixed;
   opacity: 1;
-}
-
-.carrousel__nav * {
-  position: absolute;
-  bottom: 50%;
-  z-index: 1;
-}
-
-.carrousel__bouton--precedent {
-  left: -50px;
-  background-color: turquoise;
-}
-
-.carrousel__bouton--suivant {
-  right: -50px;
-  background-color: turquoise;
-}
-
-.carrousel__bouton--fermer:active,
-.carrousel__bouton--precedent:active,
-.carrousel__bouton--suivant:active {
-  background-color: red;
-}
-
-.carrousel__form {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  bottom: 0;
-  text-align: center;
-}
-
-.carrousel__form__radio {
-  z-index: 1;
+  z-index: -1;
 }/*# sourceMappingURL=style.css.map */
