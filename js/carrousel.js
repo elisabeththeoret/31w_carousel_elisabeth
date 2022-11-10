@@ -15,6 +15,7 @@
 	console.log(galerieImages);
 
 	let indexImage = 0;
+	let dernierIndex = 0;
 
 
 	/**
@@ -23,6 +24,11 @@
 	cBoutonOuvrir.addEventListener( "click", function() {
 		afficherCarrousel();
 	} );
+
+	/**
+	 * Changer d'image active
+	 */
+	cForm.addEventListener( "click", changerImageActive.bind( this ) );
 
 	/**
 	 * Créer et afficher le carrousel
@@ -69,6 +75,25 @@
 		`;
 
 		cForm.innerHTML += cRadio;
+
+	}
+
+	/**
+	 * Changer l'image active dans le carrousel
+	 * @param { HTML Element } e // Élément cible du DOM
+	 */
+	function changerImageActive( e ) {
+
+		let cible = e.target;
+		console.log( cible );
+
+		if ( cible.dataset.index ) {
+			cFigure.children[ dernierIndex ].classList.remove( 'carrousel__figure__img--active' );
+			cFigure.children[ cible.dataset.index ].classList.add( 'carrousel__figure__img--active' );
+
+			dernierIndex = Number( cible.dataset.index );
+			console.log( dernierIndex );
+		}
 
 	}
 
