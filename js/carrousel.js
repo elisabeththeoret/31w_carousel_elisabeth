@@ -9,12 +9,14 @@
 	const cForm = document.querySelector( '.carrousel__form' );
 	const cBoutonOuvrir = document.querySelector( ".carrousel__bouton--ouvrir" );
 	const cBoutonFermer = document.querySelector( ".carrousel__bouton--fermer" );
+	const cNav = document.querySelector( ".carrousel__nav" );
 
 	const galerie = document.querySelector( ".galerie" );
 	const galerieImages = document.querySelectorAll( ".galerie img" );
 	console.log(galerieImages);
 
 	let indexImage = 0;
+	let index = 0;
 	let dernierIndex = 0;
 
 
@@ -28,7 +30,7 @@
 	/**
 	 * Changer d'image active
 	 */
-	cForm.addEventListener( "click", changerImageActive.bind( this ) );
+	cNav.addEventListener( "click", changerImageActive.bind( this ) );
 
 	/**
 	 * Créer et afficher le carrousel
@@ -85,6 +87,34 @@
 	function changerImageActive( e ) {
 
 		let cible = e.target;
+		let cRadios = document.querySelectorAll( ".carrousel__form__radio" );
+
+		if ( cible.dataset.nav ) {
+			let navIndex = dernierIndex;
+			
+			// précédent
+			if ( cible.dataset.nav == "precedent" ) {
+				if ( navIndex === 0 ) {
+					navIndex = ( cRadios.length - 1 );
+				} else {
+					navIndex--;
+				}
+			}
+			// suivant
+			else {
+				if ( navIndex === ( cRadios.length - 1) ) {
+					navIndex = 0;
+				} else {
+					navIndex++;
+				}
+			}
+			index = navIndex;
+
+			cRadios.checked = false;
+			cRadios[ index ].checked = true;
+			cible = document.querySelector( ".carrousel__form__radio:checked" );
+		}
+
 		console.log( cible );
 
 		if ( cible.dataset.index ) {

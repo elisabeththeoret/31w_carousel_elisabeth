@@ -38,7 +38,7 @@ function et_enqueue() {
 		plugin_dir_url( __FILE__ ) . "js/carrousel.js",
 		array(),
 		$version_js,
-		false
+		true
 	);
 }
 add_action( 'wp_enqueue_scripts', 'et_enqueue' );
@@ -54,13 +54,13 @@ function et_boite_carrousel() {
 	$contenu = '
 		<button class="carrousel__bouton--ouvrir">Ouvrir le carrousel</button>
 		<div class="carrousel carrousel--fermer">
-			<button class="carrousel__bouton--fermer">X</button>
-			<figure class="carrousel__figure"></figure>
+			<button class="carrousel__bouton--fermer">&#10005;</button>
 			<nav class="carrousel__nav">
-				<button class="carrousel__bouton--precedent" data-precedent><</button>
-				<button class="carrousel__bouton--suivant" data-suivant>></button>
+				<button class="carrousel__bouton--precedent" data-nav="precedent">&#9668;</button>
+				<form class="carrousel__form"></form>
+				<button class="carrousel__bouton--suivant" data-nav="suivant">&#9658;</button>
 			</nav>
-			<form class="carrousel__form"></form>
+			<figure class="carrousel__figure"></figure>
 		</div><!-- /.carrousel -->
 	';
 
