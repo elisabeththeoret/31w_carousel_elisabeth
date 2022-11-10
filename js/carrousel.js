@@ -106,6 +106,12 @@
 		carrousel.classList.remove( "carrousel--ouvrir" );
 		carrousel.classList.add( "carrousel--fermer" );
 
+		cFigure.innerHTML = "";
+		cForm.innerHTML = "";
+
+		indexImage = 0;
+		dernierIndex = 0;
+
 	} );
 
 } )();
