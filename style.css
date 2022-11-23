@@ -1,4 +1,17 @@
 @charset "UTF-8";
+/* Galerie ----------------------- */
+.galerie > * {
+  border-bottom: 3px solid transparent;
+  transition: ease-in-out 100ms;
+  cursor: pointer;
+}
+.galerie > *:hover {
+  border-bottom: 3px solid coral;
+}
+.galerie > *:active {
+  border-bottom: 3px solid seagreen;
+}
+
 /* Carrousel ----------------------- */
 .carrousel {
   position: fixed;
