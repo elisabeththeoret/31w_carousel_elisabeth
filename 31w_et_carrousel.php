@@ -10,8 +10,9 @@
 /*
 Plugin Name: 31w ET Carrousel
 Description: Une extension simple qui permet d'afficher une boîte modale de l'image sélectionnée d'une galerie, pour ensuite accéder à toutes les images de la galerie.
+Plugin URI: https://github.com/elisabeththeoret/31w_et_carrousel
 Author: Elisabeth Theoret
-Author URI: https://github.com/elisabeththeoret/31w_et_carrousel
+Author URI: https://github.com/elisabeththeoret
 Version: 1.0.0
 */
 
@@ -53,11 +54,11 @@ function et_boite_carrousel() {
 	// Le conteneur d'une boîte de carrousel
 	$contenu = '
 		<div class="carrousel carrousel--fermer">
-			<button class="carrousel__bouton--fermer">&#10005;</button>
+			<button class="carrousel__bouton carrousel__bouton--fermer">&#10005;</button>
 			<nav class="carrousel__nav">
-				<button class="carrousel__bouton--precedent" data-nav="precedent">&#9668;</button>
+				<button class="carrousel__bouton carrousel__bouton--precedent" data-nav="precedent">&#9668;</button>
 				<form class="carrousel__form"></form>
-				<button class="carrousel__bouton--suivant" data-nav="suivant">&#9658;</button>
+				<button class="carrousel__bouton carrousel__bouton--suivant" data-nav="suivant">&#9658;</button>
 			</nav>
 			<figure class="carrousel__figure"></figure>
 		</div><!-- /.carrousel -->

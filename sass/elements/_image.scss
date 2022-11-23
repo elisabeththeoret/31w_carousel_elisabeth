@@ -1,0 +1,16 @@
+.carrousel__figure__img {
+	display : block;
+	position: absolute;
+	top: 0;
+	width : 100%;
+	height : 100%;
+	object-fit: cover;
+	opacity: 0;
+	transition: opacity .5s;
+}
+
+.carrousel__figure__img--active {
+	position: fixed;
+	opacity: 1;
+	z-index: -1;
+}

@@ -1,0 +1,46 @@
+.carrousel__bouton {
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: space-around;
+}
+
+.carrousel__bouton {
+	background-color: $color__background-button;
+	border: none;
+	border-radius: 100%;
+	transition: 200ms ease-in-out;
+
+	&:hover {
+		color: $color__text-button_hover;
+	}
+
+	&:active {
+		background-color: $color__background-button_active;
+	}
+}
+
+.carrousel__bouton--fermer {
+	margin: 10px;
+	margin-left: auto;
+	font-size: 19px;
+	font-weight: bolder;
+	color: $color__text-button-x;
+	z-index: 1;
+
+	&:hover {
+		background-color: $color__background-button-x_hover;
+	}
+}
+
+/* Boutons Nav ----------------------- */
+.carrousel__bouton--precedent,
+.carrousel__bouton--suivant {
+	color: $color__text-button-nav;
+
+	&:hover {
+		background-color: $color__background-button-nav_hover;
+	}
+}

@@ -1,0 +1,13 @@
+.galerie > figure {
+	border-bottom: 3px solid $color__border-img;
+	transition: ease-in-out 100ms;
+	cursor: pointer;
+
+	&:hover {
+		border-bottom: 3px solid $color__border-img_hover;
+	}
+
+	&:active {
+		border-bottom: 3px solid $color__border-img_active;
+	}
+}

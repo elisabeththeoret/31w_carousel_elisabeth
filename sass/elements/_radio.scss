@@ -1,0 +1,52 @@
+/* Boite d'un radio */
+.carrousel__radio {
+	display: block;
+	position: relative;
+	width: fit-content;
+	height: 20px;
+	cursor: pointer;
+	font-size: 22px;
+}
+
+.carrousel__radio {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* Cacher le bouton radio par défaut */
+.carrousel__radio .carrousel__form__radio {
+	position: absolute;
+	height: 16px;
+	width: 16px;
+	margin: 0;
+	opacity: 0;
+	cursor: pointer;
+	z-index: 1;
+}
+
+/* Nouveau bouton radio personnalisé */
+.carrousel__radio__custom {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 16px;
+	width: 16px;
+}
+
+.carrousel__radio__custom {
+	background-color: $color__background-radio;
+	border-radius: 50%;
+	transition: 200ms ease-in-out;
+}
+
+.carrousel__radio:hover .carrousel__form__radio ~ .carrousel__radio__custom {
+	background-color: $color__background-radio_hover;
+	border-radius: 0;
+}
+
+.carrousel__radio .carrousel__form__radio:checked ~ .carrousel__radio__custom {
+	background-color: $color__background-radio_checked;
+	border-radius: 100%;
+}

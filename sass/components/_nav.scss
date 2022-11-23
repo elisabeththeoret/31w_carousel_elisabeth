@@ -1,0 +1,18 @@
+.carrousel__nav {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
+
+.carrousel__nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 40px;
+	padding: 10px;
+}
+
+.carrousel__nav {
+	background-color: $color__background-nav;
+	border-top: 1px solid $color__border-nav;
+}
