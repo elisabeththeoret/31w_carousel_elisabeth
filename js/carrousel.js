@@ -1,13 +1,12 @@
 /**
  * Fonction qui initialise le carrousel
  */
- ( function() {
+( function() {
 	console.log( "carrousel" );
 
 	const carrousel = document.querySelector( ".carrousel" );
 	const cFigure = document.querySelector( ".carrousel__figure" );
 	const cForm = document.querySelector( '.carrousel__form' );
-	const cBoutonOuvrir = document.querySelector( ".carrousel__bouton--ouvrir" );
 	const cBoutonFermer = document.querySelector( ".carrousel__bouton--fermer" );
 	const cNav = document.querySelector( ".carrousel__nav" );
 
@@ -23,7 +22,6 @@
 	/**
 	 * Ouvrir le carrousel
 	 */
-	cBoutonOuvrir.addEventListener( "click", initialisationCarrousel.bind( this ) );
 	galerie.addEventListener( "click", initialisationCarrousel.bind( this ) );
 
 	/**
@@ -36,7 +34,7 @@
 	 * Fonction qui initialise le carrousel
 	 * @param { HTML Element } e // Élément cible du DOM
 	 */
-	 function initialisationCarrousel( e ) {
+	function initialisationCarrousel( e ) {
 		afficherCarrousel();
 
 		index = Number( e.target.dataset.index );

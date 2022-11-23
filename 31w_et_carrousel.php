@@ -52,7 +52,6 @@ function et_boite_carrousel() {
 	/////////////////////////////////////// HTML
 	// Le conteneur d'une boîte de carrousel
 	$contenu = '
-		<button class="carrousel__bouton--ouvrir" data-index="0">Ouvrir le carrousel</button>
 		<div class="carrousel carrousel--fermer">
 			<button class="carrousel__bouton--fermer">&#10005;</button>
 			<nav class="carrousel__nav">
